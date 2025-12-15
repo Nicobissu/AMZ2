@@ -503,16 +503,17 @@ em {
 
 .media-dropdown__menu {
   position: absolute;
-  top: calc(100% + 0.4rem);
+  top: calc(100% + 0.15rem);
   left: 0;
-  min-width: 200px;
+  min-width: max(200px, 100%);
   padding: 0.5rem 0.35rem;
   background: var(--color-surface);
   border: 1px solid rgba(23, 42, 73, 0.12);
   border-radius: 10px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.12);
   opacity: 0;
-  transform: translateY(-6px);
+  transform: translateY(-4px) scale(0.98);
+  transform-origin: top left;
   pointer-events: none;
   transition: opacity 0.18s ease, transform 0.18s ease;
   z-index: 5;
@@ -520,7 +521,7 @@ em {
 
 .media-dropdown.is-open .media-dropdown__menu {
   opacity: 1;
-  transform: translateY(0);
+  transform: translateY(0) scale(1);
   pointer-events: auto;
 }
 
