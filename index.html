@@ -587,14 +587,37 @@
     nextBtn.setAttribute('aria-label', 'Imagen siguiente');
     nextBtn.innerHTML = '›';
 
-    gallery.appendChild(prevBtn);
-    gallery.appendChild(nextBtn);
+    const dotsWrapper = document.createElement('div');
+    dotsWrapper.className = 'gallery__dots';
+
+    const dots = [];
 
     const showSlide = (newIndex) => {
       slides[index].classList.remove('active');
+      dots[index].classList.remove('active');
       index = (newIndex + slides.length) % slides.length;
       slides[index].classList.add('active');
+      dots[index].classList.add('active');
     };
+
+    slides.forEach((slide, slideIndex) => {
+      const dot = document.createElement('button');
+      dot.type = 'button';
+      dot.className = `gallery__dot${slideIndex === 0 ? ' active' : ''}`;
+      dot.setAttribute('aria-label', `Ir a la imagen ${slideIndex + 1}`);
+
+      dot.addEventListener('click', () => {
+        showSlide(slideIndex);
+        resetAuto();
+      });
+
+      dots.push(dot);
+      dotsWrapper.appendChild(dot);
+    });
+
+    gallery.appendChild(prevBtn);
+    gallery.appendChild(nextBtn);
+    gallery.appendChild(dotsWrapper);
 
     const startAuto = () => {
       timer = setInterval(() => showSlide(index + 1), delay);
