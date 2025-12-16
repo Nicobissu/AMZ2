@@ -585,6 +585,7 @@ em {
 
 .media-dropdown {
   position: relative;
+  display: inline-block;
 }
 
 .media-dropdown__toggle {
@@ -595,23 +596,23 @@ em {
   --menu-padding-y: 0.5rem;
   --menu-padding-x: 0.35rem;
   position: absolute;
-  top: 100%;
+  top: calc(100% + 0.25rem);
   left: 0;
-  width: max(220px, 100%);
-  margin-top: 0.15rem;
+  width: max-content;
+  min-width: 100%;
   padding: 0 var(--menu-padding-x);
   background: var(--color-surface);
   border: 1px solid rgba(23, 42, 73, 0.12);
   border-radius: 10px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
   opacity: 0;
   max-height: 0;
   overflow: hidden;
-  transform: translateY(-6px);
+  transform: translateY(-4px);
   transform-origin: top left;
   pointer-events: none;
-  transition: opacity 0.18s ease, transform 0.18s ease, max-height 0.25s ease, padding 0.18s ease;
-  z-index: 5;
+  transition: opacity 0.2s ease, transform 0.2s ease, max-height 0.25s ease, padding 0.2s ease;
+  z-index: 50;
 }
 
 .media-dropdown.is-open .media-dropdown__menu {
