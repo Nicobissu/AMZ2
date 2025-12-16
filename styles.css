@@ -392,6 +392,8 @@ em {
               radial-gradient(circle at 80% 0%, rgba(23, 42, 73, 0.06), transparent 40%),
               #f9f7f4;
   padding: 3.5rem 0;
+  max-width: none;
+  width: 100%;
 }
 
 .method {
