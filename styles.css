@@ -52,7 +52,7 @@ em {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(255, 255, 255, 0.96);
+  background: var(--color-surface);
   border-bottom: 1px solid rgba(242, 202, 153, 0.5);
 }
 
@@ -499,6 +499,36 @@ em {
   overflow: hidden;
   border-radius: 12px;
   background: rgba(23, 42, 73, 0.6);
+}
+
+.gallery__dots {
+  position: absolute;
+  left: 50%;
+  bottom: 0.75rem;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.5rem;
+  padding: 0.4rem 0.85rem;
+  background: rgba(23, 42, 73, 0.5);
+  border-radius: 999px;
+  backdrop-filter: blur(6px);
+}
+
+.gallery__dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  background: rgba(255, 255, 255, 0.35);
+  cursor: pointer;
+  padding: 0;
+  transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+}
+
+.gallery__dot.active {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  transform: scale(1.1);
 }
 
 .gallery__nav {
