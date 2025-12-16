@@ -752,7 +752,7 @@ em {
 .model__actions {
   display: flex;
   gap: 1rem;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   overflow: visible;
   margin-left: auto;
   margin-right: 1.6rem;
@@ -762,7 +762,7 @@ em {
 }
 
 .model__actions .media-dropdown {
-  flex: 1;
+  flex: 0 1 auto;
   min-width: 180px;
 }
 
