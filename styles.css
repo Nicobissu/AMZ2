@@ -490,6 +490,7 @@ em {
   display: grid;
   gap: 1rem;
   height: 100%;
+  overflow: visible;
 }
 
 .model__gallery {
@@ -581,6 +582,8 @@ em {
   display: flex;
   gap: 0.75rem;
   flex-wrap: wrap;
+  position: relative;
+  z-index: 10;
 }
 
 .media-dropdown {
@@ -596,7 +599,7 @@ em {
   --menu-padding-y: 0.5rem;
   --menu-padding-x: 0.35rem;
   position: absolute;
-  top: calc(100% + 0.25rem);
+  top: calc(100% + 0.35rem);
   left: 0;
   width: max-content;
   min-width: 100%;
@@ -612,7 +615,7 @@ em {
   transform-origin: top left;
   pointer-events: none;
   transition: opacity 0.2s ease, transform 0.2s ease, max-height 0.25s ease, padding 0.2s ease;
-  z-index: 50;
+  z-index: 100;
 }
 
 .media-dropdown.is-open .media-dropdown__menu {
