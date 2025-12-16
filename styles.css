@@ -159,19 +159,22 @@ em {
 /* HERO */
 .hero {
   position: relative;
-  min-height: 75vh;
+  min-height: 80vh;
   display: flex;
-  align-items: flex-end;
+  align-items: flex-start;
   justify-content: center;
   overflow: hidden;
   background: var(--color-primary);
+  padding: 5rem 1.5rem 3.5rem;
+  margin-top: 1.25rem;
 }
 
 .hero__media {
   position: absolute;
-  inset: 0;
+  inset: 1.25rem 0 0 0;
   overflow: hidden;
   filter: brightness(0.95);
+  border-radius: 22px;
 }
 
 .hero__media .video {
@@ -182,21 +185,22 @@ em {
 
 .hero__overlay {
   position: absolute;
-  inset: 0;
+  inset: 1.25rem 0 0 0;
   background: linear-gradient(180deg, rgba(23, 42, 73, 0.05) 0%, rgba(23, 42, 73, 0.45) 70%, rgba(23, 42, 73, 0.78) 100%);
+  border-radius: 22px;
 }
 
 .hero__content {
   position: relative;
-  max-width: 680px;
-  padding: 2rem 2.5rem;
-  background: rgba(255, 255, 255, 0.88);
+  max-width: 720px;
+  padding: 2.25rem 2.75rem;
+  background: rgba(255, 255, 255, 0.9);
   border: 1px solid rgba(242, 202, 153, 0.6);
   border-radius: 18px;
   box-shadow: 0 20px 40px rgba(0,0,0,0.18);
-  text-align: center;
+  text-align: left;
   backdrop-filter: blur(1px);
-  margin: 2rem 1.5rem 2.5rem;
+  margin: 0 auto 0;
 }
 
 .hero__content h1 {
