@@ -754,6 +754,11 @@ em {
   gap: 1rem;
   flex-wrap: wrap;
   overflow: visible;
+  margin-left: auto;
+  margin-right: 1.6rem;
+  margin-bottom: 1.6rem;
+  max-width: fit-content;
+  padding-right: 0;
 }
 
 .model__actions .media-dropdown {
