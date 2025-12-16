@@ -649,6 +649,17 @@
 
   </main>
 
+  <!-- Modal de pantalla completa para imágenes -->
+  <div id="fullscreenModal" class="fullscreen-modal">
+    <button class="fullscreen-modal__close" aria-label="Cerrar visor">×</button>
+    <button class="fullscreen-modal__nav fullscreen-modal__nav--prev" aria-label="Imagen anterior">‹</button>
+    <button class="fullscreen-modal__nav fullscreen-modal__nav--next" aria-label="Imagen siguiente">›</button>
+    <img id="fullscreenImage" class="fullscreen-modal__image" src="" alt="">
+    <div class="fullscreen-modal__counter">
+      <span id="fullscreenCounter"></span>
+    </div>
+  </div>
+
   <footer class="footer">
     <p><strong>Amazonia</strong> - Viviendas industrializadas - 2024</p>
   </footer>
@@ -771,6 +782,92 @@
   document.addEventListener('keyup', (event) => {
     if (event.key === 'Escape') {
       closeDropdowns();
+    }
+  });
+
+  // ===== FULLSCREEN IMAGE VIEWER =====
+  const fullscreenModal = document.getElementById('fullscreenModal');
+  const fullscreenImage = document.getElementById('fullscreenImage');
+  const fullscreenCounter = document.getElementById('fullscreenCounter');
+  const closeBtn = document.querySelector('.fullscreen-modal__close');
+  const prevBtnModal = document.querySelector('.fullscreen-modal__nav--prev');
+  const nextBtnModal = document.querySelector('.fullscreen-modal__nav--next');
+
+  let currentGalleryImages = [];
+  let currentImageIndex = 0;
+
+  // Función para abrir el modal
+  function openFullscreen(images, index) {
+    currentGalleryImages = images;
+    currentImageIndex = index;
+    updateFullscreenImage();
+    fullscreenModal.classList.add('active');
+    document.body.style.overflow = 'hidden'; // Prevenir scroll en el body
+  }
+
+  // Función para cerrar el modal
+  function closeFullscreen() {
+    fullscreenModal.classList.remove('active');
+    document.body.style.overflow = ''; // Restaurar scroll
+  }
+
+  // Función para actualizar la imagen en pantalla completa
+  function updateFullscreenImage() {
+    const currentImg = currentGalleryImages[currentImageIndex];
+    fullscreenImage.src = currentImg.src;
+    fullscreenImage.alt = currentImg.alt;
+    fullscreenCounter.textContent = `${currentImageIndex + 1} / ${currentGalleryImages.length}`;
+  }
+
+  // Función para navegar a la imagen anterior
+  function showPrevImage() {
+    currentImageIndex = (currentImageIndex - 1 + currentGalleryImages.length) % currentGalleryImages.length;
+    updateFullscreenImage();
+  }
+
+  // Función para navegar a la imagen siguiente
+  function showNextImage() {
+    currentImageIndex = (currentImageIndex + 1) % currentGalleryImages.length;
+    updateFullscreenImage();
+  }
+
+  // Agregar eventos de clic a todas las imágenes de las galerías
+  galleries.forEach((visual) => {
+    const galleryImages = Array.from(visual.querySelectorAll('.slide'));
+
+    galleryImages.forEach((img, index) => {
+      img.addEventListener('click', () => {
+        openFullscreen(galleryImages, index);
+      });
+    });
+  });
+
+  // Eventos del modal
+  closeBtn.addEventListener('click', closeFullscreen);
+  prevBtnModal.addEventListener('click', showPrevImage);
+  nextBtnModal.addEventListener('click', showNextImage);
+
+  // Cerrar al hacer clic fuera de la imagen
+  fullscreenModal.addEventListener('click', (event) => {
+    if (event.target === fullscreenModal) {
+      closeFullscreen();
+    }
+  });
+
+  // Navegación con teclado
+  document.addEventListener('keydown', (event) => {
+    if (!fullscreenModal.classList.contains('active')) return;
+
+    switch(event.key) {
+      case 'Escape':
+        closeFullscreen();
+        break;
+      case 'ArrowLeft':
+        showPrevImage();
+        break;
+      case 'ArrowRight':
+        showNextImage();
+        break;
     }
   });
   </script>
