@@ -251,12 +251,15 @@ em {
 
 .btn {
   display: inline-block;
-  padding: 1rem 2.5rem;
-  font-size: 1rem;
+  padding: 1.25rem 3rem;
+  font-size: 1.1rem;
   font-weight: 600;
   color: var(--color-primary);
   background: var(--color-accent);
   border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
 }
 
 .btn:hover {
@@ -583,9 +586,14 @@ em {
 
 .model__actions {
   display: flex;
-  gap: 0.75rem;
+  gap: 1rem;
   flex-wrap: wrap;
   overflow: visible;
+}
+
+.model__actions .media-dropdown {
+  flex: 1;
+  min-width: 180px;
 }
 
 .media-dropdown {
@@ -595,6 +603,7 @@ em {
 
 .media-dropdown__toggle {
   cursor: pointer;
+  width: 100%;
 }
 
 .media-dropdown__menu {
