@@ -191,28 +191,28 @@ em {
 .hero__content {
   position: absolute;
   bottom: 0;
-  left: 0;
   right: 0;
-  width: 100%;
+  left: auto;
+  width: 33.333%;
   padding: 4rem 2.5rem;
-  background: var(--color-primary);
+  background: rgba(255, 255, 255, 0.9);
   border: none;
   border-radius: 0;
   box-shadow: 0 -10px 40px rgba(0,0,0,0.3);
-  text-align: center;
+  text-align: left;
   backdrop-filter: none;
   margin: 0;
   z-index: 10;
 }
 
 .hero__content h1 {
-  color: white;
+  color: var(--color-primary);
   margin: 0.5rem 0;
   font-size: 2.1rem;
 }
 
 .hero__content > p {
-  color: rgba(255, 255, 255, 0.9);
+  color: var(--color-primary);
   font-weight: 500;
 }
 
