@@ -193,8 +193,8 @@ em {
   bottom: 6rem;
   left: 50%;
   transform: translateX(-50%);
-  width: min(540px, calc(100% - 4rem));
-  padding: 1.25rem 1.5rem;
+  width: min(460px, calc(100% - 4rem));
+  padding: 1.1rem 1.3rem;
   background: rgba(255, 255, 255, 0.12);
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 22px;
