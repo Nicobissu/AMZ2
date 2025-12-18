@@ -194,10 +194,10 @@ em {
 
 .hero__content {
   position: absolute;
-  bottom: 6rem;
+  bottom: 30%;
   left: 50%;
   transform: translateX(-50%);
-  width: min(460px, calc(100% - 4rem));
+  width: min(660px, calc(100% - 4rem));
   padding: 1.1rem 1.3rem;
   background: rgba(255, 255, 255, 0.12);
   border: 1px solid rgba(255, 255, 255, 0.2);
