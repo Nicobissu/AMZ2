@@ -85,6 +85,7 @@ em {
   font-weight: 700;
   color: var(--color-primary);
   letter-spacing: 0.05em;
+  margin-left: 0.75rem;
 }
 
 .logo__icon {
@@ -135,6 +136,11 @@ em {
   align-items: center;
   white-space: nowrap;
   justify-self: center;
+}
+
+.nav--links {
+  justify-self: end;
+  margin-left: 1.5rem;
 }
 
 .nav__link {
