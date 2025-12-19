@@ -438,8 +438,8 @@ em {
 
 .method__text {
   max-width: 920px;
-  margin: 0 auto;
-  text-align: center;
+  margin: 0 auto 0 0;
+  text-align: justify;
   color: var(--color-muted);
   font-size: 1.02rem;
   line-height: 1.7;
