@@ -429,6 +429,23 @@ em {
   font-size: 1rem;
 }
 
+.method__text {
+  max-width: 920px;
+  margin: 0 auto;
+  text-align: center;
+  color: var(--color-muted);
+  font-size: 1.02rem;
+  line-height: 1.7;
+}
+
+.method__text p {
+  margin: 0 0 1.1rem;
+}
+
+.method__text p:last-child {
+  margin-bottom: 0;
+}
+
 .method__flow {
   display: flex;
   flex-wrap: wrap;
