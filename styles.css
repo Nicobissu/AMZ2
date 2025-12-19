@@ -726,6 +726,14 @@ em {
   font-weight: 500;
 }
 
+.model__legal {
+  margin-top: 0.45rem;
+  font-size: 0.75rem;
+  font-weight: 400;
+  line-height: 1.4;
+  color: var(--color-muted);
+}
+
 .model__visual {
   background: rgba(23, 42, 73, 0.05);
   border: 1px solid rgba(23, 42, 73, 0.08);
