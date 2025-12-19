@@ -873,15 +873,16 @@
       video.controls = true;
       video.autoplay = true;
       video.playsInline = true;
+      video.preload = 'metadata';
+      video.setAttribute('controlsList', 'nodownload');
       mediaViewerContent.appendChild(video);
     } else {
-      const frame = document.createElement('iframe');
-      frame.className = 'media-viewer__iframe';
-      frame.src = media.src;
-      frame.title = media.title || 'Plano';
-      frame.loading = 'lazy';
-      frame.allowFullscreen = true;
-      mediaViewerContent.appendChild(frame);
+      const image = document.createElement('img');
+      image.className = 'media-viewer__image';
+      image.src = media.src;
+      image.alt = media.title || 'Plano';
+      image.loading = 'lazy';
+      mediaViewerContent.appendChild(image);
     }
 
     mediaViewerTitle.textContent = media.title || 'Contenido';
