@@ -62,7 +62,7 @@ em {
   margin: 0 auto;
   padding: 1rem clamp(1.5rem, 4vw, 3.5rem);
   display: grid;
-  grid-template-columns: auto auto minmax(0, 1fr) auto;
+  grid-template-columns: auto minmax(0, 1fr) auto auto;
   column-gap: clamp(1rem, 3vw, 3.5rem);
   align-items: center;
 }
@@ -80,7 +80,7 @@ em {
 }
 
 .page-title {
-  justify-self: start;
+  justify-self: end;
   font-size: 1.6rem;
   font-weight: 700;
   color: var(--color-primary);
@@ -134,7 +134,7 @@ em {
   gap: 1.1rem;
   align-items: center;
   white-space: nowrap;
-  justify-self: start;
+  justify-self: center;
 }
 
 .nav__link {
