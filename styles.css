@@ -62,7 +62,7 @@ em {
   margin: 0 auto;
   padding: 1rem clamp(1.5rem, 4vw, 3.5rem);
   display: grid;
-  grid-template-columns: auto minmax(0, 1fr) auto auto;
+  grid-template-columns: auto minmax(0, 1fr) auto;
   column-gap: clamp(1rem, 3vw, 3.5rem);
   align-items: center;
 }
@@ -80,12 +80,12 @@ em {
 }
 
 .page-title {
-  justify-self: start;
   font-size: 1.6rem;
   font-weight: 700;
   color: var(--color-primary);
   letter-spacing: 0.05em;
-  margin-left: 0;
+  padding: 0.35rem 1rem;
+  text-align: center;
 }
 
 .logo__icon {
@@ -132,16 +132,15 @@ em {
 
 .nav {
   display: flex;
-  gap: 1.1rem;
+  gap: clamp(0.75rem, 2vw, 1.6rem);
   align-items: center;
   white-space: nowrap;
-  justify-self: center;
+  justify-content: center;
 }
 
 .nav--links {
-  justify-self: start;
-  margin-left: 0.5rem;
-  margin-right: 1rem;
+  justify-self: center;
+  margin: 0;
 }
 
 .nav__link {
@@ -1258,6 +1257,7 @@ em {
   .page-title {
     justify-self: center;
     font-size: 1.3rem;
+    padding: 0;
   }
 
   h1 { font-size: 2rem; }
