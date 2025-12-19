@@ -61,8 +61,8 @@ em {
   margin: 0 auto;
   padding: 1rem 1.5rem;
   display: grid;
-  grid-template-columns: auto 1fr auto;
-  column-gap: 1.5rem;
+  grid-template-columns: auto 1fr auto auto;
+  column-gap: 2rem;
   align-items: center;
 }
 
@@ -134,6 +134,10 @@ em {
   justify-self: end;
   align-items: center;
   white-space: nowrap;
+}
+
+.nav__link--contact {
+  justify-self: end;
 }
 
 .nav__link {
@@ -1210,7 +1214,8 @@ em {
 
 /* RESPONSIVE NAV */
 @media (max-width: 767px) {
-  .nav {
+  .nav,
+  .nav__link--contact {
     display: none;
   }
 
