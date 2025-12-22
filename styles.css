@@ -1411,7 +1411,7 @@ em {
   }
 
   .model__actions {
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     width: calc(100% - 2.4rem);
     margin: 0 1.2rem 1.4rem;
     max-width: none;
@@ -1420,8 +1420,9 @@ em {
   }
 
   .model__actions .media-dropdown {
-    width: 100%;
+    width: auto;
     min-width: 0;
+    flex: 1 1 0;
   }
 
   .btn {
