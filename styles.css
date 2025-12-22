@@ -653,6 +653,8 @@ em {
   padding: 1.4rem 1.6rem;
   background: linear-gradient(135deg, rgba(242, 202, 153, 0.7), rgba(242, 202, 153, 0.45));
   border-bottom: 1px solid rgba(23, 42, 73, 0.08);
+  border-top-left-radius: 18px;
+  border-top-right-radius: 18px;
 }
 
 .model__head h3 {
