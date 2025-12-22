@@ -16,7 +16,7 @@
         <span class="sr-only">Amazonia - Viviendas industrializadas</span>
       </a>
 
-      <nav class="nav nav--links">
+      <nav class="nav nav--links" id="siteNav">
         <a href="#metodo" class="nav__link">Sistema AMZ</a>
         <a href="#muros" class="nav__link">Muros AMZ</a>
         <div class="page-title">PORTFOLIO</div>
@@ -24,9 +24,14 @@
         <a href="#obras" class="nav__link">Obras</a>
       </nav>
 
+      <button class="nav-toggle" type="button" aria-controls="siteNav" aria-expanded="false">
+        <span class="nav-toggle__icon" aria-hidden="true"></span>
+        <span class="sr-only">Abrir menú</span>
+      </button>
       <a href="#contacto" class="nav__link nav__link--cta nav__link--contact">Contactar</a>
     </div>
   </header>
+  <div class="nav-overlay" aria-hidden="true"></div>
 
   <main>
     
@@ -841,9 +846,37 @@
     }
   });
 
+  const navToggle = document.querySelector('.nav-toggle');
+  const navPanel = document.querySelector('.nav--links');
+  const navOverlay = document.querySelector('.nav-overlay');
+
+  const setNavState = (isOpen) => {
+    if (!navPanel || !navToggle || !navOverlay) return;
+    navPanel.classList.toggle('is-open', isOpen);
+    navOverlay.classList.toggle('is-open', isOpen);
+    document.body.classList.toggle('nav-open', isOpen);
+    navToggle.setAttribute('aria-expanded', String(isOpen));
+    navToggle.querySelector('.sr-only').textContent = isOpen ? 'Cerrar menú' : 'Abrir menú';
+  };
+
+  if (navToggle && navPanel && navOverlay) {
+    navToggle.addEventListener('click', () => {
+      setNavState(!navPanel.classList.contains('is-open'));
+    });
+
+    navOverlay.addEventListener('click', () => setNavState(false));
+
+    navPanel.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => setNavState(false));
+    });
+  }
+
   document.addEventListener('keyup', (event) => {
     if (event.key === 'Escape') {
       closeDropdowns();
+      if (navPanel?.classList.contains('is-open')) {
+        setNavState(false);
+      }
     }
   });
 
