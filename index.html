@@ -633,23 +633,31 @@
         <div class="works__gallery">
           <div class="model__visual works__visual" data-interval="4200">
             <div class="model__gallery">
-              <img class="slide active" src="https://pruebasnb.cloud/Multimedia/Obras/0.mp4" alt="Obra AMZ en fachada principal">
-              <img class="slide active" src="https://pruebasnb.cloud/Multimedia/Obras/1.jpg" alt="Obra AMZ en fachada principal">
-              <img class="slide active" src="https://pruebasnb.cloud/Multimedia/Obras/2.jpg" alt="Obra AMZ en fachada principal">
-              <img class="slide active" src="https://pruebasnb.cloud/Multimedia/Obras/3.jpg" alt="Obra AMZ en fachada principal">
+              <video class="slide active" muted loop playsinline preload="metadata" aria-label="Obra AMZ en video">
+                <source src="https://pruebasnb.cloud/Multimedia/Obras/0.mp4" type="video/mp4">
+              </video>
+              <img class="slide" src="https://pruebasnb.cloud/Multimedia/Obras/1.jpg" alt="Obra AMZ en fachada principal">
+              <img class="slide" src="https://pruebasnb.cloud/Multimedia/Obras/2.jpg" alt="Obra AMZ en fachada principal">
+              <img class="slide" src="https://pruebasnb.cloud/Multimedia/Obras/3.jpg" alt="Obra AMZ en fachada principal">
 
-              <img class="slide active" src="https://pruebasnb.cloud/Multimedia/Obras/4.MP4" alt="Obra AMZ en fachada principal">
-              <img class="slide active" src="https://pruebasnb.cloud/Multimedia/Obras/5.jpg" alt="Obra AMZ en fachada principal">
-              <img class="slide active" src="https://pruebasnb.cloud/Multimedia/Obras/6.jpg" alt="Obra AMZ en fachada principal">
-              <img class="slide active" src="https://pruebasnb.cloud/Multimedia/Obras/7.MP4" alt="Obra AMZ en fachada principal">
-              <img class="slide active" src="https://pruebasnb.cloud/Multimedia/Obras/8.jpg" alt="Obra AMZ en fachada principal">
+              <video class="slide" muted loop playsinline preload="metadata" aria-label="Obra AMZ en video">
+                <source src="https://pruebasnb.cloud/Multimedia/Obras/4.MP4" type="video/mp4">
+              </video>
+              <img class="slide" src="https://pruebasnb.cloud/Multimedia/Obras/5.jpg" alt="Obra AMZ en fachada principal">
+              <img class="slide" src="https://pruebasnb.cloud/Multimedia/Obras/6.jpg" alt="Obra AMZ en fachada principal">
+              <video class="slide" muted loop playsinline preload="metadata" aria-label="Obra AMZ en video">
+                <source src="https://pruebasnb.cloud/Multimedia/Obras/7.MP4" type="video/mp4">
+              </video>
+              <img class="slide" src="https://pruebasnb.cloud/Multimedia/Obras/8.jpg" alt="Obra AMZ en fachada principal">
               <!-- Para agregar videos, usar la etiqueta <video class="slide"> con un <source> MP4 -->
               
-              <img class="slide active" src="https://pruebasnb.cloud/Multimedia/Obras/9.jpg" alt="Obra AMZ en fachada principal">
+              <img class="slide" src="https://pruebasnb.cloud/Multimedia/Obras/9.jpg" alt="Obra AMZ en fachada principal">
               
-              <img class="slide active" src="https://pruebasnb.cloud/Multimedia/Obras/10.MP4" alt="Obra AMZ en fachada principal">
+              <video class="slide" muted loop playsinline preload="metadata" aria-label="Obra AMZ en video">
+                <source src="https://pruebasnb.cloud/Multimedia/Obras/10.MP4" type="video/mp4">
+              </video>
               
-              <img class="slide active" src="https://pruebasnb.cloud/Multimedia/Obras/11.jpg" alt="Obra AMZ en fachada principal">
+              <img class="slide" src="https://pruebasnb.cloud/Multimedia/Obras/11.jpg" alt="Obra AMZ en fachada principal">
 
               
 
@@ -709,7 +717,6 @@
 
       <footer class="media-viewer__footer">
         <span class="media-viewer__counter" id="mediaViewerCounter"></span>
-        <a class="media-viewer__download" id="mediaViewerDownload" href="#" download>Descargar</a>
       </footer>
     </div>
   </div>
@@ -851,7 +858,6 @@
   const mediaViewerContent = document.getElementById('mediaViewerContent');
   const mediaViewerCounter = document.getElementById('mediaViewerCounter');
   const mediaViewerTitle = document.getElementById('mediaViewerTitle');
-  const mediaViewerDownload = document.getElementById('mediaViewerDownload');
   const mediaViewerClose = mediaViewer.querySelector('.media-viewer__close');
   const mediaViewerPrev = mediaViewer.querySelector('.media-viewer__nav--prev');
   const mediaViewerNext = mediaViewer.querySelector('.media-viewer__nav--next');
@@ -925,10 +931,6 @@
 
     mediaViewerTitle.textContent = media.title || 'Contenido';
     mediaViewerCounter.textContent = `${currentMediaIndex + 1} / ${currentMediaItems.length}`;
-    if (mediaViewerDownload) {
-      mediaViewerDownload.href = media.src;
-      mediaViewerDownload.setAttribute('download', '');
-    }
   }
 
   function openMediaViewer(items, index = 0) {
