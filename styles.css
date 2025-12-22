@@ -1311,6 +1311,12 @@ em {
 
 /* RESPONSIVE NAV */
 @media (max-width: 767px) {
+  .hero {
+    min-height: 100svh;
+    height: 100svh;
+    background: #000;
+  }
+
   .header__inner {
     grid-template-columns: auto 1fr auto;
     grid-template-rows: auto auto;
@@ -1379,7 +1385,7 @@ em {
   }
 
   .hero__media .video {
-    object-fit: contain;
+    object-fit: cover;
     object-position: center;
   }
 
