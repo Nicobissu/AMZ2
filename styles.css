@@ -814,7 +814,8 @@ em {
   right: 0.8rem;
 }
 
-.model__gallery img {
+.model__gallery img,
+.model__gallery video {
   position: absolute;
   inset: 0;
   width: 100%;
@@ -824,7 +825,8 @@ em {
   transition: opacity 0.6s ease;
 }
 
-.model__gallery img.active {
+.model__gallery img.active,
+.model__gallery video.active {
   opacity: 1;
 }
 
@@ -1233,8 +1235,9 @@ em {
 .media-viewer__footer {
   padding: 0.75rem 1.5rem 1.25rem;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
+  gap: 1rem;
   border-top: 1px solid rgba(23, 42, 73, 0.08);
   background: linear-gradient(180deg, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0.95) 100%);
 }
@@ -1243,6 +1246,24 @@ em {
   font-weight: 600;
   color: var(--color-primary);
   letter-spacing: 0.06em;
+}
+
+.media-viewer__download {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  background: var(--color-primary);
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.media-viewer__download:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 20px rgba(25, 86, 120, 0.2);
 }
 
 @media (max-width: 960px) {
@@ -1267,7 +1288,8 @@ em {
 }
 
 /* Hacer las imágenes del carrusel clicables */
-.model__gallery img {
+.model__gallery img,
+.model__gallery video {
   cursor: pointer;
 }
 
