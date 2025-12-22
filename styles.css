@@ -20,6 +20,8 @@ body {
   line-height: 1.6;
   color: var(--color-text);
   background: var(--color-surface);
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 img {
@@ -1315,7 +1317,7 @@ em {
   }
 
   .method__text {
-    text-align: left;
+    text-align: justify;
   }
 
   .model__head {
